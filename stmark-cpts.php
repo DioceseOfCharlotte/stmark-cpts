@@ -86,6 +86,10 @@ final class Stmark_Posts_Plugin {
 			'pto',
 			'academic',
 			'extracurricular',
+			'bulletin',
+			'thursday_packet',
+			'press_release',
+			'classroom',
 		);
 
 	/**
@@ -148,6 +152,8 @@ final class Stmark_Posts_Plugin {
 		require_once $this->dir_path . 'lib/extended-taxos.php';
 		require_once $this->dir_path . 'inc/customizer.php';
 		require_once $this->dir_path . 'inc/post-types.php';
+		require_once $this->dir_path . 'inc/cpts-blog.php';
+		require_once $this->dir_path . 'inc/documents-meta.php';
 	}
 
 	/**
@@ -171,7 +177,26 @@ final class Stmark_Posts_Plugin {
 	 */
 	public function admin_scripts() {
 		wp_enqueue_media();
+		wp_register_script( 'bb-file', $this->js_uri . 'butterbean-media-file.js', array( 'backbone', 'wp-util', 'butterbean' ), '', true );
+		wp_register_style( 'flatpickr', $this->css_uri . 'flatpickr.dark.min.css', false, false );
+		wp_register_script( 'flatpickr', $this->js_uri . 'flatpickr.js', false, false, true );
+
 		wp_enqueue_style( 'stmark-admin-styles', $this->css_uri . 'stmark.css' );
+
+		wp_add_inline_script ( 'flatpickr', $this->bbs_get_flatpickr_script() );
+	}
+
+	/**
+	 * FlatPickr
+	 */
+	public function bbs_get_flatpickr_script() {
+		return "function domReady(callback) {
+					document.readyState === 'interactive' ||
+					document.readyState === 'complete' ? callback() : document.addEventListener('DOMContentLoaded', callback);
+				};
+				domReady(function () {
+					document.querySelectorAll('.flatpickr-input').flatpickr();
+				});";
 	}
 
 	/**

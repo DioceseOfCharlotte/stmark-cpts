@@ -114,4 +114,45 @@ function stmark_register_post_types() {
 			'capabilities'        => stmark_posts_plugin()->stmark_get_capabilities( 'extracurricular' ),
 			)
 		);
+
+		register_extended_post_type( 'classroom',
+			array(
+			'admin_cols' => array(
+				'grade' => array(
+					'taxonomy' => 'classroom_grade',
+				),
+				'featured_image' => array(
+					'title'          => 'Image',
+					'featured_image' => 'abe-icon',
+				)
+			),
+			'admin_filters' => array(
+		        'component' => array(
+		            'title'    => 'All block types',
+		            'meta_key' => 'arch_component',
+		        ),
+			),
+			'menu_icon'           => 'dashicons-editor-spellcheck',
+			'supports'            => $supports,
+			'capability_type'     => 'classroom',
+			'map_meta_cap'        => true,
+			'capabilities'        => stmark_posts_plugin()->stmark_get_capabilities( 'classroom' ),
+			)
+		);
+
+		register_extended_taxonomy( 'classroom_grade', 'classroom',
+			array(
+			'capabilities' => array(
+				'manage_terms' => 'manage_options',
+				'edit_terms'   => 'manage_options',
+				'delete_terms' => 'manage_options',
+				'assign_terms' => 'edit_classrooms',
+			),
+			),
+			array(
+		    'singular' => 'Grade Level',
+		    'plural'   => 'Grade Levels',
+			)
+		);
+
 }

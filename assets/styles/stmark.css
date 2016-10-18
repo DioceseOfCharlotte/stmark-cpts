@@ -1,3 +1,78 @@
+
+.wp-admin .flatpickr-calendar {
+	background: rgba(35, 40, 45, .98);
+	border: 1px solid #23282d;
+}
+
+.wp-admin .flatpickr-calendar.arrowTop:before {
+	border-bottom-color: #23282d
+}
+
+.wp-admin .flatpickr-calendar.arrowTop:after {
+	border-bottom-color: rgba(35, 40, 45, .98);
+}
+
+.wp-admin .flatpickr-calendar.arrowBottom:before {
+	border-top-color: #23282d
+}
+
+.wp-admin .flatpickr-calendar.arrowBottom:after {
+	border-top-color: rgba(35, 40, 45, .98)
+}
+
+
+.wp-admin .flatpickr-day.today:focus, .wp-admin .flatpickr-day.today:hover {
+	color: #23282d
+}
+
+.wp-admin .flatpickr-weekwrapper .flatpickr-weeks {
+	border-right: 1px solid #23282d
+}
+
+.wp-admin .flatpickr-rContainer+.flatpickr-time {
+	border-top: 1px solid #23282d
+}
+
+.wp-admin .flatpickr-next-month svg:hover, .wp-admin .flatpickr-prev-month svg:hover {
+	fill: #00b9eb
+}
+
+.wp-admin .flatpickr-next-month:hover, .wp-admin .flatpickr-prev-month:hover {
+	color: #00b9eb
+}
+
+.wp-admin .flatpickr-day.inRange, .wp-admin .flatpickr-day.nextMonthDay.inRange, .wp-admin .flatpickr-day.nextMonthDay:focus, .wp-admin .flatpickr-day.nextMonthDay:hover, .wp-admin .flatpickr-day.prevMonthDay.inRange, .wp-admin .flatpickr-day.prevMonthDay:focus, .wp-admin .flatpickr-day.prevMonthDay:hover, .wp-admin .flatpickr-day:focus, .wp-admin .flatpickr-day:hover {
+	background: #191E23;
+    border-color: #191E23;
+    color: #00b9eb;
+}
+
+.wp-admin .flatpickr-day.today {
+	background-color: #32373C;
+    border-color: #32373C;
+    font-weight: 600;
+}
+
+.wp-admin .flatpickr-day.selected, .wp-admin .flatpickr-day.selected:focus, .wp-admin .flatpickr-day.selected:hover {
+	background: #0073AA;
+    border-color: #0073AA;
+}
+
+.wp-admin .flatpickr-time input:focus, .wp-admin .flatpickr-time input:hover {
+	-moz-appearance: number-input;
+	background: #32373C;
+}
+
+.wp-admin .flatpickr-am-pm:focus, .wp-admin .flatpickr-am-pm:hover {
+	background: #32373C
+}
+
+
+
+
+
+
+
 .butterbean-manager.butterbean-manager-default {
 	background: linear-gradient( 90deg, #F5F5F5 0%, #F5F5F5 180px, #fff 180px, #fff 100% );
 	overflow: initial;
