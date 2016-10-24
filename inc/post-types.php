@@ -27,6 +27,28 @@ function stmark_register_post_types() {
 		'archive',
 	);
 
+	register_extended_post_type( 'parent-home',
+		array(
+		'admin_cols' => array(
+			'featured_image' => array(
+				'title'          => 'Image',
+				'featured_image' => 'abe-icon',
+			),
+		),
+		'admin_filters' => array(
+			'component' => array(
+				'title'    => 'All block types',
+				'meta_key' => 'arch_component',
+			),
+		),
+		'menu_icon'           => 'dashicons-admin-users',
+		'supports'            => $supports,
+		'capability_type'     => 'parent-home',
+		'map_meta_cap'        => true,
+		'capabilities'        => stmark_posts_plugin()->stmark_get_capabilities( 'parent-home' ),
+		)
+	);
+
 		register_extended_post_type( 'athletic',
 			array(
 			'admin_cols' => array(

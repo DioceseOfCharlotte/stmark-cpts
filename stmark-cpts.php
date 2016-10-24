@@ -90,6 +90,7 @@ final class Stmark_Posts_Plugin {
 			'thursday_packet',
 			'press_release',
 			'classroom',
+			'parent-home'
 		);
 
 	/**
