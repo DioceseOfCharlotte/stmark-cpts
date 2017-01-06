@@ -73,7 +73,7 @@
 
 
 
-.butterbean-manager.butterbean-manager-default {
+/*.butterbean-manager.butterbean-manager-default {
 	background: linear-gradient( 90deg, #F5F5F5 0%, #F5F5F5 180px, #fff 180px, #fff 100% );
 	overflow: initial;
 }
@@ -124,7 +124,7 @@
 .butterbean-checkbox-list > li,
 .butterbean-radio-list > li {
 	margin: 0 1rem 1rem 0;
-}
+}*/
 
 .doc-actions-icon {
 	cursor: pointer;
